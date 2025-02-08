@@ -1,5 +1,4 @@
-/* eslint-disable */
-
+"use client"
 import React, { useEffect, useState } from 'react';
 import { viewDay, viewMonthAgenda, viewMonthGrid, viewWeek } from '@schedule-x/calendar';
 import { ScheduleXCalendar, useNextCalendarApp } from '@schedule-x/react';
@@ -29,11 +28,12 @@ const Calendar: React.FC<CustomCalendarProps> = ({ events, onEventClick }) => {
         events: events,
         selectedDate: '2025-02-08',
         callbacks: {
-            onEventClick: (calendarEvent, e) => {
+            onEventClick: (calendarEvent) => { // Removed `e`
                 console.log('Event Clicked:', calendarEvent);
                 if (onEventClick) onEventClick(calendarEvent as CalendarEvent);
             },
         },
+        
         plugins: [createEventModalPlugin()],
     });
 

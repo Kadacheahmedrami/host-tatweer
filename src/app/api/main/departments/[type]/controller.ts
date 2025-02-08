@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 
 import prisma from "@/lib/prisma/prismaClient";
 import { AddDepartmentData, DepartmentResult } from "./types";
@@ -120,6 +120,7 @@ export async function getDepartmentById(
 
     // Remove security fields from the returned object.
     const { departmentCompanyId, departmentManagers, ...departmentData } = existingDepartment;
+    console.log(departmentCompanyId,departmentManagers)
     return { Department: departmentData };
   } catch (error) {
     throw throwAppropriateError(error);

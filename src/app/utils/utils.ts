@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 
 import axios from 'axios';
 import { User } from '../api/auth/signin/types';
@@ -47,15 +47,7 @@ interface Task {
     taskManager: string;
 }
 
-interface GeminiRequest {
-    department: DepartmentType;
-    companySize?: string;
-    industry?: string;
-    currentChallenges?: string;
-    budget?: string;
-    timeframe?: string;
-    conversation: string[];
-}
+
 
 interface GeminiResponse {
     text: string;
