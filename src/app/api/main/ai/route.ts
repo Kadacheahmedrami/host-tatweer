@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 
 import { DepartmentType } from '@/app/types/constant';
 import { GenerateRequest } from '@/app/types/types';
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
     2. DEPARTMENT-SPECIFIC CONSIDERATIONS
     Tailor recommendations based on the department type:
 
-    ${Object.entries(DepartmentType).map(([key, value]) => `
+    ${Object.entries(DepartmentType).map(([ value]) => `
     ${value.toUpperCase()}:
     - Key focus areas for ${value}
     - Industry best practices

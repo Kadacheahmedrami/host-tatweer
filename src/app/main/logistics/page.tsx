@@ -1,8 +1,5 @@
-/* eslint-disable */
 
 "use client"
-
-import React, { useState } from 'react'
 import DynamicTable from '../stock/component/DynamicTable';
 import LogisticsLineChart from './components/LogisticsLineChart';
 import Calendar from './components/Calendar';
@@ -15,15 +12,13 @@ const Logistics = () => {
         { id: "03.", name: "Uber Food", left: "350", need: "475", number: "05123456789", status: "Absent", test: "jimmy" },
     ];
 
-    const generateConfig = <T extends Record<string, any>>(data: T[]): Array<keyof T> => {
-        return data.length > 0 ? (Object.keys(data[0]) as Array<keyof T>) : []
-    };
+
 
     const stockFormatters = {
         number: (value: string) => <span className="font-mono">{value}</span>,
     };
 
-    const [stockConfig, setStockConfig] = useState<(keyof (typeof stockData)[0])[]>(generateConfig(stockData))
+   
 
     const data = [
         { month: "Jan", cost: 1200 },
